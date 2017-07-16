@@ -224,12 +224,14 @@ aws apigateway import-rest-api --body 'file://definitions/hello-you.yaml'
     "id": "2kideufka4",
     "createdDate": 1500240051
 }
+```
 
 - Deploy the API
 
-````bash
+```bash
 aws apigateway create-deployment --rest-api-id 2kideufka4 --stage-name 'dev'
 ```
+
 ```json
 {
     "id": "z0fwy1",
@@ -239,7 +241,7 @@ aws apigateway create-deployment --rest-api-id 2kideufka4 --stage-name 'dev'
 
 - Test it
 
-```
+```bash
 curl https://2kideufka4.execute-api.eu-west-1.amazonaws.com/dev/Rael
 ```
 
