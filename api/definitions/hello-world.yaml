@@ -1,0 +1,35 @@
+---
+swagger: "2.0"
+info:
+  version: "2017-07-16T15:15:20Z"
+  title: "hello-world"
+host: "gfhpli6k00.execute-api.us-west-2.amazonaws.com"
+basePath: "/prod" 
+schemes:
+- "https"
+paths:
+  /:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseTemplates:
+              application/json: "{ \"message\" : \"Hello world!\" }"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
