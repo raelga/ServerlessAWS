@@ -3,8 +3,6 @@ swagger: "2.0"
 info:
   version: "2017-07-16T15:15:20Z"
   title: "hello-world"
-host: "gfhpli6k00.execute-api.us-west-2.amazonaws.com"
-basePath: "/prod" 
 schemes:
 - "https"
 paths:
