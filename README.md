@@ -69,3 +69,32 @@ The region is usually the region closest to you, but you can configure anyone. *
 The output setting just configures how the AWS CLI will print the execution results.
 
 For more information about the initial AWS CLI configuration, please check [Configuring the AWS CLI documentation](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html).
+
+### Check that it's working
+
+We should be able to list our currents APIs (none at this point):
+
+```bash
+aws apigateway get-rest-apis
+```
+
+Expected output:
+
+```json
+{
+    "items": []
+}
+```
+
+But we shouldn't be able to list, for example, the IAM Groups.
+
+```bash
+aws iam list-groups
+```
+
+Expected output:
+
+```bash
+An error occurred (AccessDenied) when calling the ListGroups operation: User: arn:aws:iam::388402642723:user/alyx is not authorized to perform: iam:ListGroups on
+resource: arn:aws:iam::388402642723:group/
+```
