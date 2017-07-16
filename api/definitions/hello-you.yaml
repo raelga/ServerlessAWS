@@ -1,0 +1,40 @@
+---
+swagger: "2.0"
+info:
+  version: "2017-07-16T15:35:27Z"
+  title: "hello-you"
+host: "r6fik4hubl.execute-api.us-west-2.amazonaws.com"
+basePath: "/prod"
+schemes:
+- "https"
+paths:
+  /{name}:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "name"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseTemplates:
+              application/json: "{  \"message\" : \"Hello $input.params('name')!\" }"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
