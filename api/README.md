@@ -44,7 +44,7 @@ For this example, we only will need the root path `/` implementing `GET` method.
 
 In this case, the API endpoint will MOCK the response from a server and just reply with a _Hello World_ `json` message and an HTTP `200` status code. You can check this configuration defined in the responses node of the `yaml`.
 
-The full API definition can be found at [Hello World API Swagger configuration](api/definitions/hello-world.yaml).
+The full API definition can be found at [Hello World API Swagger configuration](definitions/hello-world.yaml).
 
 ### Let's import the API to create a new API Gateway REST API
 
@@ -147,9 +147,9 @@ Should return again an empty items list:
 
 ## Let's work on our second API, a Hello You
 
-This apply will be much alike the Hello World but with a twist. This time, the URL will be used as a parameter to personalize the response. 
+This API will be much alike the Hello World but with a twist. This time, the URL will be used as a parameter to personalize the response. 
 
-You can get the full API definition in [Hello You API Swagger configuration](api/definitions/hello-you.yaml). 
+You can get the full API definition in [Hello You API Swagger configuration](definitions/hello-you.yaml). 
 
 Let's focus again on the paths configuration:
 
@@ -190,7 +190,7 @@ paths:
   /{name}:
 ```
 
-That will be captured as path paramater:
+That will be captured as path parameter:
 
 ```yaml
       parameters:
@@ -247,7 +247,7 @@ curl https://2kideufka4.execute-api.eu-west-1.amazonaws.com/dev/Rael
 {  "message" : "Hello Rael!" }
 ```
 
-- Once teste, remove it if you want with
+- Finally, after playing with the API, remove it
 
 ```bash
 aws apigateway delete-rest-api --rest-api-id 2kideufka4
