@@ -207,6 +207,11 @@ And used in the response to personalize the message:
               application/json: "{  \"message\" : \"Hello $input.params('name')!\" }"
 ```
 
+You can get more information about the available parametrizations in [API Gateway Mapping Template Built-in Functions and Variables](http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html).
+
+The templates uses Apache VTL engine, you can read about the languange in [the reference for the Velocity Template Language (VTL)](http://velocity.apache.org/engine/1.7/vtl-reference.html).
+
+
 ### Let's deploy it
 
 This time, we will go a bit faster:
