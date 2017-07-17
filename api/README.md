@@ -1,4 +1,4 @@
-# API Gateway resources
+# AWS API Gateway
 
 Requirements:
 
